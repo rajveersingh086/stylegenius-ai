@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleGenius - AI Outfit Planner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-tshirt"></i> StyleGenius
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Your Personal <span>AI Stylist</span></h1>
+                    <p>Upload your clothes and let our AI create perfect outfit combinations for any occasion.</p>
+                    <button class="btn primary get-started">Get Started <i class="fas fa-arrow-right"></i></button>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Fashion clothing" class="responsive-img">
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2>Amazing Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h3>Upload Your Wardrobe</h3>
+                        <p>Simply take photos of your clothes and our system will catalog them automatically.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>AI-Powered Combinations</h3>
+                        <p>Our advanced AI analyzes colors, patterns, and styles to create perfect matches.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-calendar-week"></i>
+                        </div>
+                        <h3>7-Day Outfit Plans</h3>
+                        <p>Get a full week's worth of outfit suggestions tailored to your schedule.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile Friendly</h3>
+                        <p>Access your wardrobe and get recommendations anytime, anywhere.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="how-it-works">
+            <div class="container">
+                <h2>How It Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Upload Your Clothes</h3>
+                            <p>Take clear photos of your shirts, pants, dresses, and accessories against a plain background.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Tag Your Items</h3>
+                            <p>Categorize your clothes by type, color, and occasion (casual, formal, party, etc.).</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Generate Outfits</h3>
+                            <p>Let our AI analyze your wardrobe and suggest perfect combinations for any event.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Save & Share</h3>
+                            <p>Save your favorite outfits and share them with friends for feedback.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="outfit-generator">
+            <div class="container">
+                <h2>Create Your Outfits</h2>
+                <div class="generator-container">
+                    <div class="wardrobe-section">
+                        <h3>Your Wardrobe</h3>
+                        <div class="wardrobe-tabs">
+                            <button class="tab-btn active" data-category="shirts">Shirts</button>
+                            <button class="tab-btn" data-category="pants">Pants</button>
+                            <button class="tab-btn" data-category="shoes">Shoes</button>
+                            <button class="tab-btn" data-category="accessories">Accessories</button>
+                        </div>
+                        <div class="wardrobe-items">
+                            <!-- Items will be populated via JavaScript -->
+                        </div>
+                        <div class="upload-section">
+                            <input type="file" id="clothing-upload" accept="image/*" multiple style="display: none;">
+                            <button class="btn secondary upload-btn">
+                                <i class="fas fa-plus"></i> Add New Items
+                            </button>
+                        </div>
+                    </div>
+                    <div class="outfit-section">
+                        <h3>Generated Outfits</h3>
+                        <div class="occasion-selector">
+                            <div class="select-group">
+                                <label for="occasion-select">Occasion:</label>
+                                <select id="occasion-select">
+                                    <option value="casual">Casual</option>
+                                    <option value="business">Business</option>
+                                    <option value="party">Party</option>
+                                    <option value="date">Date Night</option>
+                                    <option value="week">7-Day Plan</option>
+                                </select>
+                            </div>
+                            <div class="select-group">
+                                <label for="season-select">Season:</label>
+                                <select id="season-select">
+                                    <option value="all">All Seasons</option>
+                                    <option value="spring">Spring</option>
+                                    <option value="summer">Summer</option>
+                                    <option value="fall">Fall</option>
+                                    <option value="winter">Winter</option>
+                                </select>
+                            </div>
+                            <button class="btn primary generate-btn"><i class="fas fa-magic"></i> Generate Outfits</button>
+                        </div>
+                        <div class="outfit-results">
+                            <div class="loading-spinner" style="display: none;">
+                                <div class="spinner"></div>
+                                <p>AI is creating your perfect outfits...</p>
+                            </div>
+                            <div class="outfit-grid">
+                                <!-- Outfits will be populated via JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <h2>What Our Users Say</h2>
+                <div class="testimonial-slider">
+                    <div class="testimonial active">
+                        <p>"This app has completely transformed how I dress. I used to waste so much time deciding what to wear, now I have perfect outfits ready in seconds!"</p>
+                        <div class="user">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+                            <div class="user-info">
+                                <h4>Sarah Johnson</h4>
+                                <span>Fashion Blogger</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <p>"The AI suggestions are surprisingly accurate. It's like having a personal stylist in my pocket!"</p>
+                        <div class="user">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                            <div class="user-info">
+                                <h4>Michael Chen</h4>
+                                <span>Tech Entrepreneur</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <p>"I love the 7-day planning feature. It saves me so much time on Sunday evenings when I plan my week."</p>
+                        <div class="user">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Rodriguez">
+                            <div class="user-info">
+                                <h4>Emma Rodriguez</h4>
+                                <span>Marketing Director</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Get In Touch</h3>
+                        <p>Have questions or feedback? We'd love to hear from you!</p>
+                        <ul>
+                            <li><i class="fas fa-envelope"></i> rajveer227817@gmail.com.com</li>
+                            <li><i class="fas fa-phone"></i> 9838743680</li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea placeholder="Your Message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn primary">Send Message <i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3><i class="fas fa-tshirt"></i> StyleGenius</h3>
+                    <p>Your personal AI stylist for perfect outfits every day.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <form>
+                        <input type="email" placeholder="Your Email Address">
+                        <button type="submit" class="btn primary">Subscribe <i class="fas fa-envelope"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Rajveer Singh. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
